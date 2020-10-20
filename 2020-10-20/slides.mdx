@@ -32,8 +32,8 @@ Check out the usage section at [npm](https://www.npmjs.com/package/prop-types#us
 We are not limited to primitives for prop-types.
 
 ```jsx
-Alarm.propTypes = {
-	      post: PropTypes.arrayOf(
+Comments.propTypes = {
+	      posts: PropTypes.arrayOf(
 		            PropTypes.shape({
                         author: PropTypes.string.isRequired,
 			                  likes: PropTypes.number,
@@ -41,17 +41,13 @@ Alarm.propTypes = {
 		            })
 	      )
 }
-
-export default function TodoList({status, todos}){
-	...
-}
 ```
 
 ---
 
 ## Exercise: prop-types
 
-[GitHub-Repo](https://github.com)
+[GitHub-Repo](https://github.com/neuefische/hh-2020-j1-todo-web-app)
 
 Add prop types to all props in the frontend of the todo app. Try to be as explicit as you can!
 
