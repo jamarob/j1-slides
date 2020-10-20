@@ -1,0 +1,124 @@
+# prop-types
+
+-   `$ npm install prop-types`
+-   Typechecking for props
+-   But only **at runtime**!
+-   Mark props as optional or required
+-   Fail faster, find bugs more quickly
+-   Type information can be used by other software (e.g. storybook)
+
+---
+
+## Writing simple prop-types
+
+Components may have a `propTypes` property with key-value pairs describing its props and their type.
+
+```jsx
+Greeting.propTypes = {
+        name: PropTypes.string,
+};
+
+export default function Greeting({ name = "Stranger" }) {
+        return <h1>Hello {name}!</h1>;
+}
+```
+
+Check out the usage section at [npm](https://www.npmjs.com/package/prop-types#usage) for a complete overview of available types.
+
+---
+
+## Writing complex prop-types
+
+We are not limited to primitives for prop-types.
+
+```jsx
+Alarm.propTypes = {
+	      post: PropTypes.arrayOf(
+		            PropTypes.shape({
+                        author: PropTypes.string.isRequired,
+			                  likes: PropTypes.number,
+                        published: PropTypes.instanceOf(Date)
+		            })
+	      )
+}
+
+export default function TodoList({status, todos}){
+	...
+}
+```
+
+---
+
+## Exercise: prop-types
+
+[GitHub-Repo](https://github.com)
+
+Add prop types to all props in the frontend of the todo app. Try to be as explicit as you can!
+
+---
+
+## Exercise: Search filter for todo app
+
+Add a search component to the Todo-App frontend that filters the description of all todos.
+
+Think about data flow before you code.
+
+**Bonus:** Put the heading, new todo and search in the header of the page.
+
+---
+
+# CSS-Grid
+Two dimensional layouts oriented in columns and rows. 
+
+The **grid container** is the element with `display: grid`, all of its direct children are called **grid items**. 
+
+---
+
+## Grid container properties I
+
+|Property|Value|
+|---|---|
+|display|grid|
+|grid-gap|15px 10px |
+|grid-template-rows | 48px 30% 1fr min-content|
+|grid-template-columns | repeat(5, 1fr) |
+
+---
+
+## Grid container properties II
+|Property|Value|
+|---|---|
+|justify-items| start \| end \| center \| stretch (default)|
+|align-items|  start \| end \| center \| stretch (default)|
+|grid-auto-columns | implicit size of grid tracks|
+|grid-auto-rows | implicit size of grid tracks |
+
+---
+
+## Grid item properties
+
+|Property|Value|
+|---|---|
+|grid-column| start-line \| end-line/span |
+|grid-row| start-line \| end-line/span|
+|justify-self | start \| end \| center \| stretch (default)|
+|align-self | start \| end \| center \| stretch (default) |
+
+---
+
+## Demo: Grid
+
+[Codepen](https://codepen.io/jamarob/pen/qBNNGNR)
+
+---
+
+## Exercise: Grid
+
+[Codepen](https://codepen.io/jamarob/pen/pobbmNX)
+
+Going further:
+- [Complete guide to grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [CSS garden learning game](https://cssgridgarden.com/)
+- [1 line layouts](https://1linelayouts.glitch.me/)
+
+
